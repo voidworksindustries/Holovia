@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Holovia - Contact</title>
-  <meta name="description" content="Contact Holovia support.">
+  <title>Voidworks | Contact</title>
+  <meta name="description" content="Contact Voidworks about Holovia support, feedback, and bug reports.">
+  <link rel="icon" type="image/png" href="Voidworks Logo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html">Holovia</a>
+      <a class="brand" href="index.html" aria-label="Voidworks home">
+        <img src="Voidworks Logo.png" alt="Voidworks">
+      </a>
       <button class="nav-toggle" id="navToggle" aria-label="Open navigation">Menu</button>
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
@@ -24,32 +29,37 @@
   <main class="container">
     <section class="page-hero">
       <h1>Contact</h1>
-      <p class="lead">Keep this page direct. One clear contact method is better than a fake form that does nothing.</p>
+      <p class="lead">Send a message to Voidworks about Holovia, including bug reports, feedback, or questions.</p>
     </section>
 
     <section class="stack">
       <article class="article">
-        <div class="contact-list">
-          <div class="contact-item">
-            <strong>Email</strong><br>
-            <a href="mailto:your@email.com">your@email.com</a>
+        <h2>Message Center</h2>
+        <p>Please report bugs. The team is small.</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <label class="field" for="contactTitle">
+            <span>Title</span>
+            <input id="contactTitle" name="title" type="text" placeholder="Bug report, feedback, support request"
+              maxlength="120" required>
+          </label>
+          <label class="field" for="contactMessage">
+            <span>Message</span>
+            <textarea id="contactMessage" name="message" rows="8" placeholder="Write your message here."
+              required></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Open Email Draft</button>
           </div>
-          <div class="contact-item">
-            <strong>Support</strong><br>
-            For bug reports, account issues, or general questions, send a message by email.
-          </div>
-          <div class="contact-item">
-            <strong>Response time</strong><br>
-            Usually within a few business days.
-          </div>
-        </div>
+          <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
+        </form>
+        <p>Response should usually be within a day.</p>
       </article>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© 2026 Holovia</div>
+      <div>© 2026 Voidworks</div>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="patch-notes.html">Patch Notes</a>
@@ -60,4 +70,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
