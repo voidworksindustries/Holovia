@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voidworks | Holovia</title>
+  <meta name="description"
+    content="Voidworks is making Holovia. This site has the game page, patch notes, contact page, and privacy policy.">
+  <link rel="icon" type="image/png" href="Voidworks Logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Voidworks home">
+        <img src="Voidworks Logo.png" alt="Voidworks">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation">Menu</button>
+      <nav class="nav-links" id="navLinks">
+        <a class="active" href="index.html">Home</a>
+        <a href="patch-notes.html">Patch Notes</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Voidworks</h1>
+          <p>Voidworks is making Holovia, a fast arcade game built around short runs and steady improvement.</p>
+          <div class="button-row">
+            <a class="button primary" href="patch-notes.html">View Patch Notes</a>
+            <a class="button" href="privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2>Download Holovia</h2>
+          <p>Holovia is available on Google Play. The App Store version is still on the way.</p>
+          <div class="button-row">
+            <a class="button primary" href="https://play.google.com/store/apps/details?id=nl.flint.holovia&amp;hl=nl"
+              target="_blank" rel="noopener noreferrer">Download on Play Store</a>
+            <span class="button" aria-disabled="true">App Store Coming Soon</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>About Holovia</h2>
+        <p class="lead">Holovia is a fast arcade game where each run is short, direct, and easy to jump back into.</p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Fast Runs</h3>
+            <p>Runs are short, restarts are instant, and there is very little waiting around. You can get back in
+              quickly and try again right away.</p>
+          </article>
+          <article class="card">
+            <h3>Skill First</h3>
+            <p>The game is built around timing, control, and consistency. Getting better comes from practice, not
+              shortcuts.</p>
+          </article>
+          <article class="card">
+            <h3>Regular Updates</h3>
+            <p>Holovia is still being worked on. Updates are used for fixes, balance changes, and new content when it
+              is ready.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>In-Game Screenshots</h2>
+        <p class="lead">A few screenshots from the game.</p>
+        <div class="gallery-grid">
+          <figure class="shot-card">
+            <button class="shot-button" type="button" data-lightbox-src="Screenshots/Day Scene.png"
+              data-lightbox-alt="Holovia day scene screenshot" data-lightbox-caption="Day Scene">
+              <img src="Screenshots/Day Scene.png" alt="Holovia day scene screenshot" loading="lazy">
+              <span class="shot-overlay">Click to enlarge</span>
+            </button>
+            <figcaption>Day Scene</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <button class="shot-button" type="button" data-lightbox-src="Screenshots/Sunset Scene.png"
+              data-lightbox-alt="Holovia sunset scene screenshot" data-lightbox-caption="Sunset Scene">
+              <img src="Screenshots/Sunset Scene.png" alt="Holovia sunset scene screenshot" loading="lazy">
+              <span class="shot-overlay">Click to enlarge</span>
+            </button>
+            <figcaption>Sunset Scene</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <button class="shot-button" type="button" data-lightbox-src="Screenshots/Night Scene.png"
+              data-lightbox-alt="Holovia night scene screenshot" data-lightbox-caption="Night Scene">
+              <img src="Screenshots/Night Scene.png" alt="Holovia night scene screenshot" loading="lazy">
+              <span class="shot-overlay">Click to enlarge</span>
+            </button>
+            <figcaption>Night Scene</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <button class="shot-button" type="button" data-lightbox-src="Screenshots/Image Sequence_018_0000.png"
+              data-lightbox-alt="Holovia gameplay showcase screenshot one" data-lightbox-caption="Gameplay Showcase 1">
+              <img src="Screenshots/Image Sequence_018_0000.png" alt="Holovia gameplay showcase screenshot one"
+                loading="lazy">
+              <span class="shot-overlay">Click to enlarge</span>
+            </button>
+            <figcaption>Gameplay Showcase 1</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <button class="shot-button" type="button" data-lightbox-src="Screenshots/Image Sequence_025_0000.png"
+              data-lightbox-alt="Holovia gameplay showcase screenshot two" data-lightbox-caption="Gameplay Showcase 2">
+              <img src="Screenshots/Image Sequence_025_0000.png" alt="Holovia gameplay showcase screenshot two"
+                loading="lazy">
+              <span class="shot-overlay">Click to enlarge</span>
+            </button>
+            <figcaption>Gameplay Showcase 2</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <button class="shot-button" type="button" data-lightbox-src="Screenshots/Image Sequence_028_0000.png"
+              data-lightbox-alt="Holovia gameplay showcase screenshot three"
+              data-lightbox-caption="Gameplay Showcase 3">
+              <img src="Screenshots/Image Sequence_028_0000.png" alt="Holovia gameplay showcase screenshot three"
+                loading="lazy">
+              <span class="shot-overlay">Click to enlarge</span>
+            </button>
+            <figcaption>Gameplay Showcase 3</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="imageLightbox" aria-label="Expanded screenshot view">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image view">Close</button>
+    <img class="lightbox-image" id="lightboxImage" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2026 Voidworks</div>
+      <div class="footer-links">
+        <a href="patch-notes.html">Patch Notes</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
