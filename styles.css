@@ -550,6 +550,78 @@ h1 {
   flex-wrap: wrap;
 }
 
+/* Patch notes accordion */
+
+.patch-details {
+  padding: 0;
+  overflow: hidden;
+}
+
+.patch-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.patch-summary::-webkit-details-marker {
+  display: none;
+}
+
+.patch-summary::marker {
+  display: none;
+  content: "";
+}
+
+.patch-summary:hover {
+  background: rgba(52, 120, 246, 0.04);
+}
+
+.patch-summary .patch-meta {
+  margin-bottom: 0;
+}
+
+.patch-summary .patch-meta::after {
+  content: "Open";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 62px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--accent-2);
+  background: rgba(52, 120, 246, 0.08);
+  border: 1px solid rgba(120, 173, 255, 0.16);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.patch-details[open] .patch-summary .patch-meta::after {
+  content: "Close";
+}
+
+.patch-details > p,
+.patch-details > h3,
+.patch-details > ul {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.patch-details > p {
+  margin-top: 0;
+}
+
+.patch-details > h3 {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.patch-details > ul:last-child {
+  margin-bottom: 22px;
+}
+
 @media (max-width: 760px) {
   .nav-toggle {
     display: inline-flex;
@@ -601,6 +673,17 @@ h1 {
   .lightbox-image {
     max-height: calc(100vh - 150px);
   }
+
+  .patch-summary {
+    padding: 18px;
+  }
+
+  .patch-details > p,
+  .patch-details > h3,
+  .patch-details > ul {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
 }
 
 @media (hover: none) {
@@ -616,7 +699,8 @@ h1 {
   .shot-card,
   .shot-button,
   .shot-card img,
-  .shot-overlay {
+  .shot-overlay,
+  .patch-summary {
     transition: none;
   }
 
