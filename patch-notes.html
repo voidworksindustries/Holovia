@@ -37,8 +37,39 @@
       <details class="article patch-details" open>
         <summary class="patch-summary">
           <div class="patch-meta">
-            <h2>Version 1.8.0.1</h2>
+            <h2>Version 1.8.0.2</h2>
             <span class="badge">Latest</span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.8.0.2 focuses on improved ad startup reliability, better rewarded ad handling,
+          cleaner startup behaviour, and visual polish following the 1.8.0.1 update.
+        </p>
+
+        <h3>Improvements &amp; Changes</h3>
+        <ul class="list">
+          <li>Improved rewarded ad startup reliability on iOS and Android</li>
+          <li>Improved startup handling for privacy, consent, and ad initialization flows</li>
+          <li>Added stronger startup protection to prevent ads from silently becoming unavailable</li>
+          <li>Improved rewarded ad fallback and retry behaviour</li>
+          <li>Improved notification permission timing to reduce startup conflicts</li>
+          <li>Added additional internal diagnostics for ad startup and rewarded ad availability</li>
+        </ul>
+
+        <h3>Bug Fixes</h3>
+        <ul class="list">
+          <li>Fixed rare cases where rewarded ads could remain unavailable after launching the game</li>
+          <li>Fixed cases where rewarded buttons could stay disabled without a clear startup reason</li>
+          <li>Fixed several startup timing edge cases related to ad initialization</li>
+          <li>Fixed an issue where the Holon outline could appear thicker than the rest of the outline</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details">
+        <summary class="patch-summary">
+          <div class="patch-meta">
+            <h2>Version 1.8.0.1</h2>
           </div>
         </summary>
 
