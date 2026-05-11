@@ -438,15 +438,6 @@ h1 {
   margin-top: 0;
 }
 
-.patch-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
 .badge {
   display: inline-block;
   border-radius: 999px;
@@ -561,6 +552,10 @@ h1 {
   list-style: none;
   cursor: pointer;
   padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   transition:
     background 180ms ease,
     border-color 180ms ease;
@@ -579,11 +574,19 @@ h1 {
   background: rgba(52, 120, 246, 0.04);
 }
 
-.patch-summary .patch-meta {
-  margin-bottom: 0;
+.patch-title h2 {
+  margin: 0;
 }
 
-.patch-summary .patch-meta::after {
+.patch-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.patch-toggle-label::after {
   content: "Open";
   display: inline-flex;
   align-items: center;
@@ -598,7 +601,7 @@ h1 {
   font-weight: 500;
 }
 
-.patch-details[open] .patch-summary .patch-meta::after {
+.patch-details[open] .patch-toggle-label::after {
   content: "Close";
 }
 
@@ -676,6 +679,11 @@ h1 {
 
   .patch-summary {
     padding: 18px;
+    align-items: flex-start;
+  }
+
+  .patch-actions {
+    gap: 8px;
   }
 
   .patch-details > p,
