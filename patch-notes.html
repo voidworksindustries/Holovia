@@ -37,8 +37,75 @@
       <details class="article patch-details" open>
         <summary class="patch-summary">
           <div class="patch-meta">
-            <h2>Version 1.8.0.2</h2>
+            <h2>Version 1.8.0.3</h2>
             <span class="badge">Latest</span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.8.0.3 introduces the new cross-platform Holovia scoreboard system,
+          skin progression, perks, improved startup systems, new UI upgrades,
+          in-app purchases, and multiple gameplay fixes and improvements.
+        </p>
+
+        <h3>New Features</h3>
+        <ul class="list">
+          <li>New Holovia cross-platform scoreboard system added for iOS and Android</li>
+          <li>The original Game Center scoreboard is still available on iOS</li>
+          <li>New local and global scoreboard UI added</li>
+          <li>Skin level progression system added for every skin</li>
+          <li>Perks and upgrades added for skins</li>
+          <li>New graphics selection menu added</li>
+          <li>Stats tab added to view various gameplay statistics</li>
+          <li>Players are now asked to choose a name for the custom scoreboard system</li>
+          <li>In-game notifications now display mission progression and new high scores</li>
+          <li>In-app purchases have been added</li>
+          <li>No Ads package added</li>
+          <li>Supporter package added including:
+            <ul>
+              <li>Ad removal</li>
+              <li>Free revives</li>
+              <li>Exclusive supporter skin</li>
+              <li>5000 coins</li>
+              <li>Double coin rewards</li>
+              <li>2 perk activations</li>
+              <li>2x free revives</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Improvements &amp; Changes</h3>
+        <ul class="list">
+          <li>Unity Ads issues on iOS have been resolved</li>
+          <li>Consent and startup flow redesigned into a single startup menu</li>
+          <li>Old consent screen system has been removed</li>
+          <li>Version code location in settings has been changed</li>
+          <li>Level-up sound added</li>
+          <li>Multiple Firebase integration improvements and fixes</li>
+          <li>Improved rewarded ad startup reliability on iOS and Android</li>
+          <li>Improved rewarded ad fallback and retry behaviour</li>
+          <li>Improved startup handling for privacy, consent, and ad initialization flows</li>
+          <li>Improved notification permission timing to reduce startup conflicts</li>
+          <li>Added stronger startup protection to prevent ads from silently becoming unavailable</li>
+          <li>Added additional internal diagnostics for ad startup and rewarded ad availability</li>
+          <li>Self-shooting wall pieces have been completely removed from the game</li>
+        </ul>
+
+        <h3>Bug Fixes</h3>
+        <ul class="list">
+          <li>Fixed an issue where shooter pieces could launch without leaving a hole behind</li>
+          <li>Fixed an issue where shifting wall shields would not properly explode the wall</li>
+          <li>Fixed rare cases where rewarded ads could remain unavailable after launching the game</li>
+          <li>Fixed cases where rewarded buttons could stay disabled without a clear startup reason</li>
+          <li>Fixed several startup timing edge cases related to ad initialization</li>
+          <li>Fixed an issue where the Holon outline could appear thicker than the rest of the outline</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details">
+        <summary class="patch-summary">
+          <div class="patch-meta">
+            <h2>Version 1.8.0.2</h2>
           </div>
         </summary>
 
