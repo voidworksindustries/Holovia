@@ -37,11 +37,93 @@
       <details class="article patch-details" open>
         <summary class="patch-summary">
           <div class="patch-title">
-            <h2>Version 1.8.0.5</h2>
+            <h2>Version 1.9</h2>
           </div>
 
           <div class="patch-actions">
             <span class="badge">Latest</span>
+            <span class="patch-toggle-label"></span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.9 introduces Challenge Races, Replay Runs, live two-player Online Multiplayer,
+          a new Race Hub, dynamic environment transitions, the new Cluster Shooter Wall,
+          eleven new daily mission types, and major gameplay, leaderboard, localization,
+          replay, and stability improvements.
+        </p>
+
+        <h3>New Features</h3>
+        <ul class="list">
+          <li>Challenge Races have been added, allowing players to create public or private races for others to compete in</li>
+          <li>Challenge creators can choose the game mode, revive rules, visibility, and an optional winner coin prize</li>
+          <li>Challenges can be joined through Explore, an exact race code, or a shared Holovia link</li>
+          <li>Replay Runs have been added, allowing players to race against ghosts from their own completed runs</li>
+          <li>Compatible cloud replays from the global leaderboard can now be opened directly as races</li>
+          <li>Live two-player Online Multiplayer has been added with lobby creation, lobby codes, ready states, and synchronized race starts</li>
+          <li>A new Race Hub now provides access to Challenge Race, Replay Run, and Online Multiplayer</li>
+          <li>Dedicated race intros, progress displays, result screens, win and loss notifications, and reward claiming have been added</li>
+          <li>Daylight, Sunset, and Night can now transition dynamically during gameplay</li>
+          <li>The new Cluster Shooter Wall launches groups of shooter pieces in waves and appears later in a run</li>
+          <li>Eleven new daily mission types have been added across shooting, shields, dashing, shifting walls, streaks, coins, revives, movement, and Replay Runs</li>
+          <li>Longest mission streak is now tracked in player statistics</li>
+          <li>A new scoreboard Search flow has been added to make players easier to find</li>
+          <li>Replay ghosts now include a dedicated marker and live distance display</li>
+        </ul>
+
+        <h3>Improvements &amp; Changes</h3>
+        <ul class="list">
+          <li>Wall generation now uses a chunk-based system to keep connected wall sequences stable across normal gameplay, replays, and multiplayer</li>
+          <li>Replay and multiplayer races now preserve wall decisions, random streams, difficulty progress, and special-wall state more accurately</li>
+          <li>Online Multiplayer gives both players the same synchronized seed, wall layout, start time, and race conditions</li>
+          <li>Opponent movement, dashes, and flow feedback are synchronized through a live remote ghost</li>
+          <li>Online Multiplayer is non-ranked and disables perks, revives, rewards, replay saving, and high-score submission for fair play</li>
+          <li>Public Challenge Races can now be filtered, refreshed, and loaded progressively while browsing</li>
+          <li>Race Hub lists now use caching, background refreshes, row pooling, and clearer loading, empty, and connection-error states</li>
+          <li>Replay lists now support sorting and keep the newest 50 local runs to control storage use</li>
+          <li>Cloud replay files are cached locally for faster repeat access and cleaned up when no longer needed</li>
+          <li>Replay files now preserve more run identity, score, wall state, revive, perk, and version information</li>
+          <li>Replay ghost movement, dash timing, chunk continuation, visibility, hole stops, and wall matching have been refined</li>
+          <li>Race pause, quit, restart, HUD, intro, game-over, and result routing now remain separate from normal runs</li>
+          <li>Race rewards only appear when earned and result scores are placed consistently for both players</li>
+          <li>Shooter pieces now provide clearer danger icons, launch feedback, collision volumes, and lane-aware hit detection</li>
+          <li>The Cluster Shooter Wall uses its own material, launch cue, and rocket-flight audio</li>
+          <li>Wall highlighting has been rebuilt with cleaner overlays, outlines, priority handling, and pass feedback</li>
+          <li>Power-up pickup protection has been improved during fast movement and close wall interactions</li>
+          <li>Wall progression, unlock timing, special-wall selection, revive continuation, and late-run difficulty have received further balancing</li>
+          <li>Camera shake, haptics, dash effects, player animations, and wall-pass feedback have been polished</li>
+          <li>Sky, horizon, fog, terrain, floor, reflections, ambience, and lighting now blend more smoothly between environments</li>
+          <li>Player details now display the Player ID using localized labels</li>
+          <li>Race, high-score, and default notifications can now use distinct sounds with a safe fallback</li>
+          <li>Challenge Race, Replay Run, Online Multiplayer, result, validation, and game-mode text has been localized across all supported languages</li>
+          <li>Race menus and result screens have received new materials, colors, icons, loading states, responsive layouts, and navigation feedback</li>
+          <li>The outdated exact-score and twist-dash daily missions have been retired</li>
+        </ul>
+
+        <h3>Bug Fixes</h3>
+        <ul class="list">
+          <li>Fixed multiple cases where replay ghosts could desynchronize, snap, disappear incorrectly, stop at the wrong wall, or react to live player movement</li>
+          <li>Fixed invalid, incomplete, or incompatible replay files being allowed to start a race</li>
+          <li>Fixed several replay visibility, wall-grid, revive, score, result, and cleanup issues</li>
+          <li>Fixed multiplayer join timing, lobby listener, same-seed generation, ready-state, disconnect, result, cleanup, and host or client asymmetry issues</li>
+          <li>Fixed race screens showing stale information, incorrect scores, incorrect reward states, missing localization, or misleading connection errors</li>
+          <li>Fixed several shooter-piece collision, warning, lane, wall-impact, audio-tail, and cleanup issues</li>
+          <li>Fixed interrupted environment transitions and several background style continuity issues</li>
+          <li>Fixed multiple wall generation, power-up, revive continuation, and special-wall state issues</li>
+          <li>Fixed multiple Race Hub dropdown, tab, slider, button, layout, loading, and navigation issues</li>
+          <li>Reduced unnecessary Firebase reads and improved backend validation, retries, session cleanup, and security rules</li>
+          <li>Improved multiplayer lifecycle handling when a player leaves, disconnects, is removed, or finishes a race</li>
+          <li>Multiple additional gameplay, interface, localization, performance, and stability fixes</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details">
+        <summary class="patch-summary">
+          <div class="patch-title">
+            <h2>Version 1.8.0.5</h2>
+          </div>
+
+          <div class="patch-actions">
             <span class="patch-toggle-label"></span>
           </div>
         </summary>
