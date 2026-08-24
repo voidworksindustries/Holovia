@@ -298,7 +298,7 @@
         </p>
 
         <ul class="list">
-          <li><strong>Firebase Authentication:</strong> creates and maintains a pseudonymous anonymous account and user ID for 16+ online features. Holovia does not use Firebase email/password login, and does not create this account in Under-16 or offline mode.</li>
+          <li><strong>Firebase Authentication:</strong> creates and maintains a pseudonymous anonymous account and user ID for 16+ online features. Holovia uses anonymous authentication only, does not ask players for login credentials, and does not create this account in Under-16 or offline mode.</li>
           <li><strong>Cloud Firestore:</strong> stores user profiles, display names, notification settings and tokens, leaderboards, statistics, challenges, lobbies, operation requests, results, ranks, and related metadata.</li>
           <li><strong>Firebase Realtime Database:</strong> synchronizes live multiplayer, spectating, presence, movement, action, world-state, disconnect, and version-status data.</li>
           <li><strong>Cloud Storage for Firebase:</strong> stores compressed challenge race-replay files in paths associated with a Firebase user ID.</li>
@@ -653,8 +653,9 @@
           <a href="mailto:Flint.tilley@voidworks-Industries.com">Flint.tilley@voidworks-Industries.com</a>.
           Include enough information to locate the relevant records, such as the player display
           name, unique player name, player ID shown in the app, platform, and an explanation of
-          the request. Do not send passwords or unnecessary identity documents. We may need to
-          verify that the request concerns your data before acting on it.
+          the request. Do not send Firebase authentication tokens, notification tokens, advertising
+          identifiers, or unnecessary identity documents. We may need to verify that the request
+          concerns your data before acting on it.
         </p>
 
         <p>
