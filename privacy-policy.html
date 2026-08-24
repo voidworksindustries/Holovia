@@ -32,6 +32,7 @@
         <a href="index.html">Home</a>
         <a href="patch-notes.html">Patch Notes</a>
         <a class="active" href="privacy-policy.html">Privacy Policy</a>
+        <a href="privacy-request.html">Privacy Request</a>
         <a href="terms-of-use.html">Terms of Use</a>
         <a href="online-rules.html">Online Rules</a>
         <a href="contact.html">Contact</a>
@@ -301,7 +302,7 @@
           <li><strong>Cloud Firestore:</strong> stores user profiles, display names, notification settings and tokens, leaderboards, statistics, challenges, lobbies, operation requests, results, ranks, and related metadata.</li>
           <li><strong>Firebase Realtime Database:</strong> synchronizes live multiplayer, spectating, presence, movement, action, world-state, disconnect, and version-status data.</li>
           <li><strong>Cloud Storage for Firebase:</strong> stores compressed challenge race-replay files in paths associated with a Firebase user ID.</li>
-          <li><strong>Cloud Functions for Firebase:</strong> performs backend processing for multiplayer, results, leaderboards, notifications, rate limits, fraud prevention, version checks, and scheduled cleanup.</li>
+          <li><strong>Cloud Functions for Firebase:</strong> performs backend processing for multiplayer, results, leaderboards, notifications, rate limits, fraud prevention, version checks, authenticated data access and deletion requests, and scheduled cleanup.</li>
           <li><strong>Firebase Cloud Messaging:</strong> provides remote push notifications and issues a device/app registration token.</li>
           <li><strong>Google Analytics for Firebase:</strong> records app, gameplay, device, and performance events only after “Help Improve Holovia” is allowed.</li>
           <li><strong>Firebase Crashlytics:</strong> collects crash and diagnostic information only after “Share Crash Reports” is allowed.</li>
@@ -636,7 +637,19 @@
         </ul>
 
         <p>
-          To submit a request, email
+          If Holovia is still installed, open <strong>Settings → Privacy &amp; Data</strong>.
+          <strong>Privacy &amp; Data Request</strong> creates an authenticated ZIP copy of online
+          account data associated with the current Firebase profile and includes stored replay
+          files where available. The ZIP is prepared in app-private storage and is shared only
+          through the destination selected in the device share window. Private staging exports
+          older than approximately seven days may be removed automatically by Holovia.
+        </p>
+
+        <p>
+          The in-game <strong>Delete Account &amp; Data</strong> control can be used to request
+          deletion of the current online account and associated cloud data. For correction requests,
+          former players, or anyone unable to use the in-game controls, visit the
+          <a href="privacy-request.html">Holovia Privacy Request page</a> or email
           <a href="mailto:Flint.tilley@voidworks-Industries.com">Flint.tilley@voidworks-Industries.com</a>.
           Include enough information to locate the relevant records, such as the player display
           name, unique player name, player ID shown in the app, platform, and an explanation of
@@ -738,6 +751,7 @@
         <a href="index.html">Home</a>
         <a href="patch-notes.html">Patch Notes</a>
         <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="privacy-request.html">Privacy Request</a>
         <a href="terms-of-use.html">Terms of Use</a>
         <a href="online-rules.html">Online Rules</a>
         <a href="contact.html">Contact</a>

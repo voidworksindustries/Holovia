@@ -29,7 +29,7 @@ if (contactForm && contactStatus) {
     const subject = `[Holovia Contact] ${title}`;
     const body = message;
     const mailtoLink =
-      `mailto:voidworksindustries@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      `mailto:Flint.tilley@voidworks-Industries.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     contactStatus.textContent = 'Opening your email app with the message draft.';
     window.location.href = mailtoLink;
