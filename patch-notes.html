@@ -41,11 +41,66 @@
       <details class="article patch-details" open>
         <summary class="patch-summary">
           <div class="patch-title">
-            <h2>Version 1.9.0.3</h2>
+            <h2>Version 1.9.0.4</h2>
           </div>
 
           <div class="patch-actions">
             <span class="badge">Latest</span>
+            <span class="patch-toggle-label"></span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.9.0.4 focuses on more reliable mobile controls, improved Challenge Race
+          behaviour, safer online services, better late-game balancing, and a smoother revive
+          experience.
+        </p>
+
+        <h3>New Features</h3>
+        <ul class="list">
+          <li>Added stronger protection for online accounts, leaderboards, races, multiplayer, and cloud data</li>
+          <li>Added improved age-group and privacy controls for online features and data collection</li>
+          <li>Added options to report or hide players from supported leaderboard screens</li>
+          <li>Added improved online presence and account-status handling</li>
+        </ul>
+
+        <h3>Improvements &amp; Changes</h3>
+        <ul class="list">
+          <li>Reviving now continues the existing run without rebuilding, moving, or replacing upcoming walls</li>
+          <li>Wall positions, spawn timing, and grid transitions are now preserved after a revive</li>
+          <li>Rebalanced 5&times;5 wall spacing to provide more consistent reaction time</li>
+          <li>Improved the 5&times;5 wall selection with more coin opportunities and a clearer mix of shooter, cluster, moving, and shifting-hole walls</li>
+          <li>Increased the number of useful coin walls during 4&times;4 gameplay while keeping its chaotic difficulty</li>
+          <li>Shifting walls now stop changing shape after a successful dash directly towards them</li>
+          <li>Improved the accuracy of dash-target detection so failed dash attempts do not affect walls</li>
+          <li>Improved explosion haptics on supported iPhones with a stronger impact, rumble, and aftershock</li>
+          <li>The Flow Timer now always displays its value in seconds</li>
+          <li>Improved notification permission timing and privacy-aware notification behaviour</li>
+          <li>Improved online validation, account handling, race synchronization, and server-side security</li>
+        </ul>
+
+        <h3>Bug Fixes</h3>
+        <ul class="list">
+          <li>Fixed a serious issue that could cause all touch controls to stop responding on Android or iOS</li>
+          <li>Fixed walls being removed, rebuilt, or placed too far away after a revive</li>
+          <li>Fixed the wall spawn timer restarting incorrectly after a revive</li>
+          <li>Fixed twisting walls unexpectedly stopping during normal gameplay</li>
+          <li>Fixed shifting walls starting to move again after being stopped by a successful dash</li>
+          <li>Fixed Current Races sometimes showing only the newest Challenge Race after creating multiple races</li>
+          <li>Fixed deleting a Challenge Race causing an already viewed result to appear again</li>
+          <li>Fixed full Challenge Race refreshes being skipped when another refresh was already running</li>
+          <li>Fixed several race-result, replay, multiplayer, notification, privacy, and online-state issues</li>
+          <li>Multiple additional gameplay, interface, performance, security, and stability fixes</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details">
+        <summary class="patch-summary">
+          <div class="patch-title">
+            <h2>Version 1.9.0.3</h2>
+          </div>
+
+          <div class="patch-actions">
             <span class="patch-toggle-label"></span>
           </div>
         </summary>
