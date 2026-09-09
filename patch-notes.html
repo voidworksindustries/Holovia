@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voidworks | Patch Notes</title>
-  <meta name="description" content="Latest Holovia patch notes from Voidworks.">
+  <meta name="description" content="Holovia 1.9.0.5 patch notes: refreshed menus, improved backgrounds, gameplay fixes, and online reliability improvements. Browse earlier updates from Voidworks.">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
@@ -38,14 +38,116 @@
 
     <section class="stack">
 
-      <details class="article patch-details" open>
+      <details class="article patch-details" id="v1-9-0-5" open>
+        <summary class="patch-summary">
+          <div class="patch-title">
+            <h2>Version 1.9.0.5</h2>
+          </div>
+
+          <div class="patch-actions">
+            <span class="badge">Latest</span>
+            <span class="patch-toggle-label"></span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.9.0.5 introduces a refreshed game-mode selector, higher-quality backgrounds,
+          gameplay improvements, more reliable Challenge Races and replays, and important
+          performance and online-service fixes.
+        </p>
+
+        <h3>Game Modes</h3>
+        <ul class="list">
+          <li>Holovia now focuses on three game modes: <strong>Climb, Rush, and Classic</strong></li>
+          <li>All three modes are available from the start</li>
+          <li>Removed the separate <strong>Twist and Shift</strong> game modes</li>
+          <li>Removed support for their leaderboards, races, saved replays, and mode-specific statistics</li>
+          <li>Updated mode selection, race configuration, statistics, and related progression handling for the remaining modes</li>
+          <li>Game Center leaderboards remain available for Climb and Rush. Classic continues to use Holovia's own leaderboard</li>
+        </ul>
+        <p><em>Twisting and shifting wall types remain part of the supported game modes.</em></p>
+
+        <h3>Menus &amp; Interface</h3>
+        <ul class="list">
+          <li>Redesigned the <strong>game-mode selector</strong> with larger cards, new illustrations, subtle mode colours, shorter descriptions, and clearer navigation</li>
+          <li>Improved selector alignment and scaling across phones, tablets, and wider screens</li>
+          <li>Fixed navigation controls overlapping the Home button</li>
+          <li>Improved the Home button's positioning above the lower screen border</li>
+          <li>Refreshed the <strong>pause menu</strong> to match Holovia's newer interface style</li>
+          <li>Corrected the <strong>Restore Purchases</strong> button label</li>
+          <li>Updated translations for redesigned menus, descriptions, and new prompts</li>
+        </ul>
+
+        <h3>Graphics &amp; Backgrounds</h3>
+        <ul class="list">
+          <li>Improved mountain texture detail and background image quality</li>
+          <li>Added subtle low-lying mist between mountain layers</li>
+          <li>Refined mountain presentation and background rendering</li>
+          <li>Fixed mountain colours and colour transitions behaving incorrectly when switching graphics quality</li>
+          <li>Walls behind the nearest wall are now darker, making the upcoming wall and its opening easier to read</li>
+        </ul>
+
+        <h3>Gameplay, Tutorials &amp; Audio</h3>
+        <ul class="list">
+          <li>Fixed issues with the <strong>hold-swipe tutorial</strong> and its follow-up dash</li>
+          <li>After completing the tutorial's hold-swipe action, players briefly receive permission to dash through the opening when correctly aligned</li>
+          <li><strong>Power-ups can no longer spawn on shooter pieces</strong></li>
+          <li>Missed power-ups now disappear together with their guiding lines</li>
+          <li>Strengthened high-speed collision detection to address cases where players could dash through solid walls or shooter pieces, particularly in Rush</li>
+          <li>Improved dash targeting when the player is very close to, or already overlapping, a wall</li>
+          <li>Dash success now requires a confirmed passage through the intended opening</li>
+          <li>Fixed dash timeouts incorrectly awarding successful passes, streaks, or mission progress</li>
+          <li>Improved movement locking for twisting, side-shifting, and other supported moving walls during dash fast-forward</li>
+          <li>Regular shape-shifting walls continue moving so their patterns do not break</li>
+          <li>Adjusted timer and Flow sound effects, including reducing the Flow Timer's volume</li>
+        </ul>
+
+        <h3>Challenge Races, Multiplayer &amp; Replays</h3>
+        <ul class="list">
+          <li>Fixed the <strong>Create Challenge</strong> button sometimes playing its animation and purchase sound without starting the challenge</li>
+          <li>Improved Challenge Race setup, including cases where the first attempt failed but retrying worked</li>
+          <li>Improved recovery and coin-refund handling when challenge creation is interrupted</li>
+          <li>Fixed incorrect connection and unavailable-race-data errors in affected online flows</li>
+          <li>Improved recovery from stale multiplayer-lobby membership that could prevent players from creating or joining another lobby</li>
+          <li>Added <strong>cloud notifications for race results</strong></li>
+          <li>Improved replay consistency between recorded movement, wall layouts, shooter positions, and dash timing</li>
+          <li>Removed unintended ghost catch-up acceleration and overlapping dash-speed effects</li>
+          <li>Fixed replay death and revive events being skipped or processed in the wrong order during delayed frames</li>
+          <li>Added clearer shield visuals to replay ghosts, including shield activation, use, and expiry</li>
+          <li>Improved request handling for protected challenge uploads and replay downloads</li>
+        </ul>
+
+        <h3>Startup &amp; Privacy</h3>
+        <ul class="list">
+          <li>Added a <strong>localized waiting prompt</strong> when players try to start before required startup checks or privacy choices are ready</li>
+          <li>Prevented unresolved startup privacy prompts from appearing after gameplay has already begun</li>
+          <li>The waiting prompt disappears when the relevant setup prompt opens</li>
+          <li>Starting becomes available as soon as the required setup is complete</li>
+          <li>Improved startup gating so offline and under-16 play do not wait for unnecessary online services</li>
+          <li>Improved recovery when restoring an eligible online session</li>
+        </ul>
+
+        <h3>Performance &amp; Online Reliability</h3>
+        <ul class="list">
+          <li>Optimized the <strong>Classic Floor shader</strong> using precomputed noise while retaining animated colours, movement, glow, and existing material controls</li>
+          <li>Reduced rendering overhead for game-mode illustrations</li>
+          <li>Reduced unnecessary rebuilding of online race lists</li>
+          <li>Combined repeated updates and prevented older refreshes from overwriting newer list data</li>
+          <li>Improved leaderboard queries, race-feed processing, and background notification processing</li>
+          <li>Added multiplayer load distribution across multiple server databases</li>
+          <li>Added a clear <strong>&ldquo;multiplayer lobbies are full&rdquo;</strong> message when available lobby capacity is reached</li>
+          <li>Strengthened app verification and compatibility with protected online services</li>
+          <li>Additional Android, iOS, interface, and stability fixes</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details">
         <summary class="patch-summary">
           <div class="patch-title">
             <h2>Version 1.9.0.4</h2>
           </div>
 
           <div class="patch-actions">
-            <span class="badge">Latest</span>
             <span class="patch-toggle-label"></span>
           </div>
         </summary>
