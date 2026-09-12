@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voidworks | Patch Notes</title>
-  <meta name="description" content="Holovia 1.9.0.5 patch notes: refreshed menus, improved backgrounds, gameplay fixes, and online reliability improvements. Browse earlier updates from Voidworks.">
+  <meta name="description" content="Holovia 1.9.0.6 patch notes: a clearer tutorial, improved wall balancing, more reliable power-ups, and important gameplay and interface fixes. Browse earlier updates from Voidworks.">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
@@ -38,14 +38,63 @@
 
     <section class="stack">
 
-      <details class="article patch-details" id="v1-9-0-5" open>
+      <details class="article patch-details" id="v1-9-0-6" open>
+        <summary class="patch-summary">
+          <div class="patch-title">
+            <h2>Version 1.9.0.6</h2>
+          </div>
+
+          <div class="patch-actions">
+            <span class="badge">Latest</span>
+            <span class="patch-toggle-label"></span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.9.0.6 brings a clearer tutorial, improved wall balancing,
+          more reliable power-ups, and important gameplay and interface fixes.
+        </p>
+
+        <h3>New Features</h3>
+        <ul class="list">
+          <li>Animated tutorial hand demonstrates swiping and double-tapping, guiding players through one action at a time</li>
+          <li>Movement countdown indicators help players anticipate when the highlighted wall will move or rotate</li>
+        </ul>
+
+        <h3>Improvements &amp; Changes</h3>
+        <ul class="list">
+          <li>Tutorial walls approach more slowly while players learn the controls</li>
+          <li>Simplified the first tutorial walls to a single opening</li>
+          <li>Added a gentler transition from the tutorial into normal gameplay</li>
+          <li>Reduced late-game Rush speed</li>
+          <li>Improved crossing time for demanding wall layouts in Climb and Classic</li>
+          <li>Restricted openings in 5&times;5 twisting walls to the inner area</li>
+          <li>Removed fake walls from 4&times;4 and 5&times;5 layouts</li>
+          <li>Missed power-ups and their guide lines now animate away</li>
+          <li>Floor movement now follows the approaching wall outside the tutorial</li>
+        </ul>
+
+        <h3>Bug Fixes</h3>
+        <ul class="list">
+          <li>Fixed power-ups spawning too close to neighbouring walls or becoming difficult to collect at high speed</li>
+          <li>Fixed rare wall-generation issues involving missing shooter pieces and openings</li>
+          <li>Fixed cases where shockwaves would not destroy the intended wall</li>
+          <li>Fixed delayed grid transitions after destroying walls with shields or shockwaves</li>
+          <li>Fixed moving walls stopping after their first movement cycle</li>
+          <li>Fixed overlapping menus and privacy prompts, including cases where gameplay could start behind a prompt</li>
+          <li>Fixed wall generation failing when pausing during the transition into a run</li>
+          <li>Fixed power-up guide lines remaining visible after passing them at high speed</li>
+          <li>Improved tutorial retry guidance, including the double-tap reminder after a missed dash</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details" id="v1-9-0-5">
         <summary class="patch-summary">
           <div class="patch-title">
             <h2>Version 1.9.0.5</h2>
           </div>
 
           <div class="patch-actions">
-            <span class="badge">Latest</span>
             <span class="patch-toggle-label"></span>
           </div>
         </summary>
