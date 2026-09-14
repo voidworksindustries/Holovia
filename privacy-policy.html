@@ -52,8 +52,8 @@
 
       <article class="article">
         <p><strong>Effective Date:</strong> 17 August 2026</p>
-        <p><strong>Last Updated:</strong> 26 August 2026</p>
-        <p><strong>Version:</strong> 1.0</p>
+        <p><strong>Last Updated:</strong> 14 September 2026</p>
+        <p><strong>Version:</strong> 1.1</p>
         <p><strong>Data Controller:</strong> Flint Tilley, trading as Voidworks Industries</p>
         <p><strong>Address:</strong> Rozenstraat 2, 7102 CB Winterswijk, the Netherlands</p>
         <p>
@@ -98,8 +98,8 @@
         <h2>2. Important Summary</h2>
 
         <ul class="list">
-          <li>Players select “Under 16” or “16 or older.” Under-16 mode is offline-only.</li>
-          <li>Under-16 and offline mode do not create a Firebase account, upload cloud data, start optional SDKs, or use online services.</li>
+          <li>Players select “Under 16” or “16 or older.” Under-16 mode keeps online gameplay features unavailable and does not create a Firebase account or start optional analytics, advertising, attribution, or push-notification SDKs.</li>
+          <li>In app versions that include Usage Stats, under-16 players can separately choose whether to send limited usage totals to our own statistics service. Under-16 mode therefore does not mean that every network connection is disabled. See <a href="#basic-usage-statistics">Basic usage statistics</a>.</li>
           <li>In 16+ online mode, a pseudonymous Firebase account and related identifiers may be created to support online features.</li>
           <li>Player-chosen display names, scores, and some challenge or lobby information may be visible to other players.</li>
           <li>Multiplayer, spectating, challenge, leaderboard, replay, notification, analytics, and diagnostic data may be transmitted to cloud services.</li>
@@ -133,11 +133,12 @@
         <h3>Age Category and Advertising Choice</h3>
 
         <p>
-          Holovia asks whether the user is “Under 16” or “16 or older.” Holovia stores only the
-          selected age category locally and does not request or store a date of birth. Under-16 mode
-          is offline-only and blocks multiplayer, challenges, spectating, leaderboards, online
-          replays, score uploads, and other online features. Existing players may see the updated
-          age request again when the privacy-state version changes.
+          Holovia asks whether the user is “Under 16” or “16 or older” and stores the selection
+          locally without asking for a date of birth. If basic usage statistics are enabled,
+          the selected broad age category is also included in those submissions. Under-16 mode
+          blocks multiplayer, challenges, spectating, leaderboards, online replays and score
+          uploads. Basic usage statistics are a separate, optional connection described below.
+          Existing players may see the age request again when the privacy-state version changes.
         </p>
 
         <h3>Optional Privacy Choices</h3>
@@ -225,6 +226,55 @@
 
       <article class="article">
 
+        <h2 id="basic-usage-statistics">5.1 Basic Usage Statistics</h2>
+
+        <p>
+          In app versions that include Usage Stats, Holovia can send limited first-party usage
+          totals to Voidworks Industries to understand how the game is used and improve its
+          gameplay, tutorials, navigation and technical performance. The totals cover modes,
+          sessions, round starts and outcomes, broad duration, score and frame-rate ranges,
+          tutorial events, gameplay actions, death categories and opened features. Activity
+          totals measure active installations playing supported rounds, not verified individuals.
+        </p>
+        <p>
+          Each submission contains a protocol version, a UTC date, the selected broad age group
+          (under 16 or 16 and older), a random submission identifier and fixed counters. New
+          submissions receive new identifiers; an identifier is reused only when retrying the
+          same submission to avoid counting it twice. These submissions contain no player name,
+          account identifier, advertising identifier, date of birth, precise location or permanent
+          installation identifier. They are added to daily totals and are not joined to player
+          profiles, used to build individual play histories, or used for advertising, attribution
+          or messages encouraging an individual player to return.
+        </p>
+        <p>
+          Google Cloud receives the submissions on our behalf and adds them to daily totals in
+          Cloud Firestore. Network delivery processes technical information such as IP addresses
+          and HTTP headers. Our statistics handler does not write those details or individual
+          submissions into the statistics database. Project-level request logging for this
+          service is excluded from ordinary log storage. This does not mean that no technical
+          personal data is processed by the hosting infrastructure; Google may also process
+          service data under the terms described in section 8.
+        </p>
+        <p>
+          For under-16 players, the separate Usage Stats screen offers No and Yes before these
+          counters are collected. That choice does not enable advertising, detailed analytics
+          or online gameplay and is not verified parental consent. For players aged 16 and older,
+          the existing Help Improve Holovia choice controls both detailed analytics and basic
+          usage statistics; there is no additional Usage Stats prompt.
+        </p>
+        <p>
+          You can switch future collection off in Settings → Privacy &amp; Data: under-16 players
+          use Usage Stats; players aged 16 and older use Privacy Choices → Help Improve Holovia.
+          Switching it off clears unsent counters and stops future collection through this route.
+          Previously received totals cannot be linked to a player to remove that player's
+          contribution separately. This does not limit rights concerning other information that
+          we can identify as relating to you. Parents can contact us using section 22.
+        </p>
+
+      </article>
+
+      <article class="article">
+
         <h2>6. Local Save Data and Cloud-Connected Data</h2>
 
         <p>
@@ -238,7 +288,9 @@
           available and used. This includes player
           names, identifiers, scores, games played, last-online timestamps, challenge and
           multiplayer information, notification data, analytics events, diagnostics, and race replays.
-          Therefore, not all gameplay-related information is stored only on the device.
+          Basic usage statistics may also be transmitted when the applicable Usage Stats or
+          Help Improve Holovia choice permits them, including in under-16 mode as described in
+          section 5.1. Therefore, not all gameplay-related information is stored only on the device.
         </p>
 
         <p>
@@ -300,10 +352,10 @@
 
         <ul class="list">
           <li><strong>Firebase Authentication:</strong> creates and maintains a pseudonymous anonymous account and user ID for 16+ online features. Holovia uses anonymous authentication only, does not ask players for login credentials, and does not create this account in Under-16 or offline mode.</li>
-          <li><strong>Cloud Firestore:</strong> stores user profiles, display names, notification settings and tokens, leaderboards, statistics, challenges, lobbies, operation requests, results, ranks, and related metadata.</li>
+          <li><strong>Cloud Firestore:</strong> stores user profiles, display names, notification settings and tokens, leaderboards, statistics, challenges, lobbies, operation requests, results, ranks, and related metadata. Basic usage totals and temporary duplicate-submission receipts are stored separately from player profiles.</li>
           <li><strong>Firebase Realtime Database:</strong> synchronizes live multiplayer, spectating, presence, movement, action, world-state, disconnect, and version-status data.</li>
           <li><strong>Cloud Storage for Firebase:</strong> stores compressed challenge race-replay files in paths associated with a Firebase user ID.</li>
-          <li><strong>Cloud Functions for Firebase:</strong> performs backend processing for multiplayer, results, leaderboards, notifications, rate limits, fraud prevention, version checks, authenticated data access and deletion requests, and scheduled cleanup.</li>
+          <li><strong>Cloud Functions for Firebase and Cloud Run:</strong> perform backend processing for multiplayer, results, leaderboards, notifications, rate limits, fraud prevention, version checks, authenticated data access and deletion requests, scheduled cleanup, and receipt and aggregation of basic usage statistics.</li>
           <li><strong>Firebase Cloud Messaging:</strong> provides remote push notifications and issues a device/app registration token.</li>
           <li><strong>Google Analytics for Firebase:</strong> records app, gameplay, device, and performance events only after “Help Improve Holovia” is allowed.</li>
           <li><strong>Firebase Crashlytics:</strong> collects crash and diagnostic information only after “Share Crash Reports” is allowed.</li>
@@ -322,6 +374,9 @@
             target="_blank" rel="noopener noreferrer">Firebase Privacy and Security</a>,
           <a href="https://firebase.google.com/terms/data-processing-terms"
             target="_blank" rel="noopener noreferrer">Firebase Data Processing and Security Terms</a>,
+          the
+          <a href="https://cloud.google.com/terms/cloud-privacy-notice"
+            target="_blank" rel="noopener noreferrer">Google Cloud Privacy Notice</a>,
           and the
           <a href="https://policies.google.com/privacy"
             target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
@@ -485,7 +540,8 @@
           <li>Provide purchases, restore entitlements, and respond to transaction problems</li>
           <li>Display, measure, limit, and personalize advertising where permitted through the applicable consent flow</li>
           <li>Attribute installs and measure marketing performance only when advertising measurement is permitted</li>
-          <li>Measure gameplay, performance, stability, and feature usage only after “Help Improve Holovia” is allowed</li>
+          <li>Measure detailed gameplay, performance, stability and feature usage after “Help Improve Holovia” is allowed</li>
+          <li>Use the separate basic usage statistics described in section 5.1 to improve the game, subject to the applicable in-app choice; these totals are not used for advertising, attribution or individual profiles</li>
           <li>Diagnose crashes, errors, connection failures, and other technical issues only after “Share Crash Reports” is allowed</li>
           <li>Prevent cheating, abuse, fraud, spam, duplicate requests, and unauthorized access</li>
           <li>Apply rate limits, enforce game rules, and maintain service integrity</li>
@@ -516,6 +572,14 @@
           You may withdraw consent for future processing where consent is the legal basis.
           Withdrawal does not affect processing that occurred before withdrawal. Some core
           online features cannot function without the processing necessary to provide them.
+        </p>
+
+        <p>
+          For basic usage statistics, truly anonymous totals are not personal data. Related
+          technical personal data requires a legal basis: our interest is limited to understanding
+          and improving the operation of Holovia, subject to applicable law and the rights and
+          interests of players, particularly children. A child's Usage Stats selection does not
+          itself establish a legal basis or replace parental consent where that consent is required.
         </p>
 
       </article>
@@ -558,13 +622,15 @@
 
         <ul class="list">
           <li>Local save data remains until it is overwritten, reset, cleared, or removed with the app.</li>
+          <li>Basic usage statistics use a local queue of at most four sealed submissions. Batches older than the previous UTC day are discarded when the app next processes the queue. If the app stays closed, local data remains until that processing occurs, collection is switched off, or app data is removed. Local choices and the marker used for daily counting remain until changed, replaced or cleared.</li>
+          <li>Server-side basic usage receipts contain an expiry time and are keyed by a hash of the random submission identifier and date. They expire three days after the start of the submission's UTC day. Basic usage totals expire 90 days after that day's start. Automatic deletion is asynchronous.</li>
           <li>Multiplayer operation requests are generally configured to expire after approximately 24 hours.</li>
           <li>Live multiplayer lobbies and sessions are generally configured to expire after approximately 30 minutes, subject to asynchronous cleanup.</li>
           <li>Multiplayer result records are generally configured to expire after approximately 7 days.</li>
           <li>Challenge lobby records are generally configured to expire after approximately 7 days, subject to asynchronous cleanup.</li>
           <li>Pending notification-queue records may be kept for up to approximately 30 days; handled queue records are generally scheduled to expire sooner, commonly after approximately 3 days.</li>
           <li>Challenge replay files may remain until they are no longer needed for the challenge, integrity checks, dispute handling, maintenance cleanup, or a verified deletion request.</li>
-          <li>User profile, notification-token, leaderboard, rank, and aggregated game-statistic records may remain while the online service operates or until deletion is requested and legally permitted.</li>
+          <li>User profile, notification-token, leaderboard, rank, and other aggregated game-statistic records may remain while the online service operates or until deletion is requested and legally permitted. The separate basic usage totals follow the 90-day expiry above.</li>
           <li>Support messages may be retained while needed to resolve the request and maintain reasonable business, safety, or legal records.</li>
           <li>Analytics, crash, attribution, advertising, app-store, and platform information is retained according to configured provider settings and the providers' applicable retention rules.</li>
         </ul>
@@ -667,8 +733,10 @@
         </p>
 
         <p>
-          You can reopen Holovia's Privacy Choices in Settings to change optional analytics and crash
-          reporting choices; changes apply to future processing. Where supported, advertising choices
+          Players aged 16 and older can reopen Privacy Choices in Settings → Privacy &amp; Data
+          to change optional analytics and crash reporting. Help Improve Holovia also controls their
+          basic usage statistics. Under-16 players use Usage Stats in the same menu to change their
+          separate basic-statistics choice. Changes apply to future processing. Where supported, advertising choices
           can be reopened through the UMP privacy controls. You can manage notification permission and
           advertising identifiers in device settings.
           On iOS, tracking permission can be changed in the system's Privacy &amp; Security settings.
@@ -682,12 +750,13 @@
         <h2>20. Children and Younger Users</h2>
 
         <p>
-          Holovia is a general-audience game and is not primarily directed to children. The app
-          asks for an age category of “Under 16” or “16 or older.” When a user selects “Under 16,”
-          Holovia keeps the player in offline-only mode, does not create a Firebase account, does
-          not upload cloud data, and does not start Analytics, Tenjin, push, ATT, advertising, or
-          other optional online SDKs. Under-16 players do not use multiplayer, challenges,
-          spectating, leaderboards, online replays, or online score submission.
+          Holovia asks for an age category of “Under 16” or “16 or older.” When a user selects
+          “Under 16,” Holovia does not create a Firebase account or start optional Firebase
+          Analytics, crash reporting, Tenjin, push-notification, ATT or advertising services.
+          Multiplayer, challenges, spectating, leaderboards, online replays and online score
+          submission remain unavailable. In versions with Usage Stats, a separate choice can
+          enable the limited statistics connection described in section 5.1. Under-16 mode is
+          therefore not a promise of no network processing when those statistics are enabled.
         </p>
 
         <p>
