@@ -53,7 +53,7 @@
       <article class="article">
         <p><strong>Effective Date:</strong> 17 August 2026</p>
         <p><strong>Last Updated:</strong> 16 September 2026</p>
-        <p><strong>Version:</strong> 1.2</p>
+        <p><strong>Version:</strong> 1.3</p>
         <p><strong>Data Controller:</strong> Flint Tilley, trading as Voidworks Industries</p>
         <p><strong>Address:</strong> Rozenstraat 2, 7102 CB Winterswijk, the Netherlands</p>
         <p>
@@ -98,8 +98,9 @@
         <h2>2. Important Summary</h2>
 
         <ul class="list">
-          <li>Players select “Under 16” or “16 or older.” Under-16 mode keeps online gameplay features unavailable and does not create a Firebase account or start optional analytics, Crashlytics, advertising, attribution, or push-notification SDKs.</li>
-          <li>In app versions that include Usage Stats, under-16 players can separately choose whether to send limited, aggregate usage totals to our own statistics service. This is the only optional statistics connection in under-16 mode; it does not create an account, enable online play, or enable Crashlytics. See <a href="#basic-usage-statistics">Basic usage statistics</a>.</li>
+          <li>Players select “Under 16” or “16 or older.” Under-16 mode keeps online gameplay features unavailable and does not create a Firebase account or start optional Firebase Analytics, Crashlytics, attribution, or push-notification services.</li>
+          <li>On supported Android releases, under-16 players may choose to watch restricted contextual rewarded ads for a revive or a Daily Streak increment. Under-16 mode does not use banner ads or forced interstitial ads. See <a href="#advertising-and-attribution">Advertising and attribution</a>.</li>
+          <li>In app versions that include Usage Stats, under-16 players can separately choose whether to send limited, aggregate usage totals to our own statistics service. This choice does not create an account, enable online play, enable Crashlytics, or control the separate contextual rewarded-ad route. See <a href="#basic-usage-statistics">Basic usage statistics</a>.</li>
           <li>In 16+ online mode, a pseudonymous Firebase account and related identifiers may be created to support online features.</li>
           <li>Player-chosen display names, scores, and some challenge or lobby information may be visible to other players.</li>
           <li>Multiplayer, spectating, challenge, leaderboard, replay, notification, analytics, and diagnostic data may be transmitted to cloud services.</li>
@@ -388,7 +389,7 @@
 
       <article class="article">
 
-        <h2>9. Advertising and Attribution</h2>
+        <h2 id="advertising-and-attribution">9. Advertising and Attribution</h2>
 
         <p>
           Holovia displays rewarded, interstitial, and banner advertisements. The current
@@ -419,9 +420,32 @@
         </p>
 
         <p>
+          On supported Android releases, under-16 mode can offer only voluntary contextual rewarded
+          ads for a revive or a Daily Streak increment. It does not show under-16 players banner ads
+          or forced interstitial ads. Before this restricted route starts, Holovia marks the session
+          as child-directed, requests non-personalized treatment, opts out of device-ID use through
+          the available provider controls, applies a general-audience content limit, and selects the
+          dedicated <strong>Under16Contextual</strong> mediation segment. The configured child route
+          accepts only Unity Ads rewarded demand. Holovia blocks the ad for the launch if the reported
+          network or segment does not match that route.
+        </p>
+
+        <p>
+          This restricted Android route starts Unity LevelPlay, Unity Ads and the Google Mobile Ads
+          SDK only after the age category and child-directed settings are applied. These SDKs and
+          their hosting infrastructure may still process technical information needed to deliver,
+          secure and measure the contextual ad, such as IP address, approximate country, device and
+          app information, ad availability, impressions, completion and fraud-prevention signals.
+          The under-16 route does not start Tenjin, does not request ATT, and does not use Google UMP
+          to ask the child for personalized-ad consent. Child advertising is currently disabled in
+          the iOS release configuration.
+        </p>
+
+        <p>
           On iOS, Holovia shows Apple's App Tracking Transparency prompt only after the relevant
           16+ privacy choices and before requesting tracking access where the system requires it.
-          Under-16 and offline mode do not start ATT or advertising SDKs. Denying tracking permission
+          Under-16 and offline mode do not start ATT. Outside the restricted Android child-ad route,
+          under-16 and offline mode do not start advertising SDKs. Denying tracking permission
           limits access to the IDFA but does not necessarily stop all contextual advertising or
           processing based on non-advertising identifiers that is otherwise permitted.
         </p>
@@ -754,11 +778,15 @@
         <p>
           Holovia asks for an age category of “Under 16” or “16 or older.” When a user selects
           “Under 16,” Holovia does not create a Firebase account or start optional Firebase
-          Analytics, crash reporting, Tenjin, push-notification, ATT or advertising services.
+          Analytics, crash reporting, Tenjin, push-notification or ATT services. On supported
+          Android releases, the restricted contextual rewarded-ad route described in section 9
+          may start advertising SDKs after child-directed settings are applied. This route is
+          currently disabled for under-16 users on iOS.
           Multiplayer, challenges, spectating, leaderboards, online replays and online score
           submission remain unavailable. In versions with Usage Stats, a separate choice can
           enable the limited statistics connection described in section 5.1. Under-16 mode is
-          therefore not a promise of no network processing when those statistics are enabled.
+          therefore not a promise of no network processing when Usage Stats or the supported
+          contextual rewarded-ad route is enabled.
         </p>
 
         <p>
