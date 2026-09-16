@@ -52,8 +52,8 @@
 
       <article class="article">
         <p><strong>Effective Date:</strong> 17 August 2026</p>
-        <p><strong>Last Updated:</strong> 14 September 2026</p>
-        <p><strong>Version:</strong> 1.1</p>
+        <p><strong>Last Updated:</strong> 16 September 2026</p>
+        <p><strong>Version:</strong> 1.2</p>
         <p><strong>Data Controller:</strong> Flint Tilley, trading as Voidworks Industries</p>
         <p><strong>Address:</strong> Rozenstraat 2, 7102 CB Winterswijk, the Netherlands</p>
         <p>
@@ -98,8 +98,8 @@
         <h2>2. Important Summary</h2>
 
         <ul class="list">
-          <li>Players select “Under 16” or “16 or older.” Under-16 mode keeps online gameplay features unavailable and does not create a Firebase account or start optional analytics, advertising, attribution, or push-notification SDKs.</li>
-          <li>In app versions that include Usage Stats, under-16 players can separately choose whether to send limited usage totals to our own statistics service. Under-16 mode therefore does not mean that every network connection is disabled. See <a href="#basic-usage-statistics">Basic usage statistics</a>.</li>
+          <li>Players select “Under 16” or “16 or older.” Under-16 mode keeps online gameplay features unavailable and does not create a Firebase account or start optional analytics, Crashlytics, advertising, attribution, or push-notification SDKs.</li>
+          <li>In app versions that include Usage Stats, under-16 players can separately choose whether to send limited, aggregate usage totals to our own statistics service. This is the only optional statistics connection in under-16 mode; it does not create an account, enable online play, or enable Crashlytics. See <a href="#basic-usage-statistics">Basic usage statistics</a>.</li>
           <li>In 16+ online mode, a pseudonymous Firebase account and related identifiers may be created to support online features.</li>
           <li>Player-chosen display names, scores, and some challenge or lobby information may be visible to other players.</li>
           <li>Multiplayer, spectating, challenge, leaderboard, replay, notification, analytics, and diagnostic data may be transmitted to cloud services.</li>
@@ -216,8 +216,9 @@
         <p>
           Firebase Analytics is optional and is started only after you allow “Help Improve Holovia.”
           Holovia does not queue analytics events after you refuse or withdraw that choice. Firebase
-          Crashlytics is started only after you allow “Share Crash Reports” and is used to diagnose
-          crashes, startup failures, and stability problems. Advertising consent, ATT, and
+          Crashlytics is started only after you allow “Share Crash Reports” in the 16+ privacy flow
+          and is used to diagnose crashes, startup failures, and stability problems. It is not started
+          in under-16 mode. Advertising consent, ATT, and
           notification permission are separate choices and do not automatically grant these optional
           analytics or crash-reporting choices.
         </p>
@@ -258,7 +259,8 @@
         <p>
           For under-16 players, the separate Usage Stats screen offers No and Yes before these
           counters are collected. That choice does not enable advertising, detailed analytics
-          or online gameplay and is not verified parental consent. For players aged 16 and older,
+          Crashlytics, or online gameplay and is not verified parental consent. The counters are
+          aggregate daily totals and are not a crash-reporting or player-profile system. For players aged 16 and older,
           the existing Help Improve Holovia choice controls both detailed analytics and basic
           usage statistics; there is no additional Usage Stats prompt.
         </p>
@@ -358,7 +360,7 @@
           <li><strong>Cloud Functions for Firebase and Cloud Run:</strong> perform backend processing for multiplayer, results, leaderboards, notifications, rate limits, fraud prevention, version checks, authenticated data access and deletion requests, scheduled cleanup, and receipt and aggregation of basic usage statistics.</li>
           <li><strong>Firebase Cloud Messaging:</strong> provides remote push notifications and issues a device/app registration token.</li>
           <li><strong>Google Analytics for Firebase:</strong> records app, gameplay, device, and performance events only after “Help Improve Holovia” is allowed.</li>
-          <li><strong>Firebase Crashlytics:</strong> collects crash and diagnostic information only after “Share Crash Reports” is allowed.</li>
+          <li><strong>Firebase Crashlytics:</strong> collects crash and diagnostic information only after “Share Crash Reports” is allowed in the 16+ privacy flow; it is not started in under-16 mode.</li>
           <li><strong>Firebase Hosting:</strong> hosts Holovia challenge-sharing and app-link pages.</li>
         </ul>
 
