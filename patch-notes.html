@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voidworks | Patch Notes</title>
-  <meta name="description" content="Holovia 1.9.0.6 patch notes: a clearer tutorial, improved wall balancing, more reliable power-ups, and important gameplay and interface fixes. Browse earlier updates from Voidworks.">
+  <meta name="description" content="Holovia 1.9.0.7 patch notes: improved age-aware privacy, child-directed rewarded ads, limited usage statistics, ad reliability, and interface fixes. Browse earlier updates from Voidworks.">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
@@ -38,7 +38,64 @@
 
     <section class="stack">
 
-      <details class="article patch-details" id="v1-9-0-6" open>
+      <details class="article patch-details" id="v1-9-0-7" open>
+        <summary class="patch-summary">
+          <div class="patch-title">
+            <h2>Version 1.9.0.7</h2>
+          </div>
+
+          <div class="patch-actions">
+            <span class="badge">Latest</span>
+            <span class="patch-toggle-label"></span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.9.0.7 improves age-aware privacy, child-directed rewarded ads,
+          limited usage statistics, and startup reliability while keeping the game
+          playable when optional services are unavailable.
+        </p>
+
+        <h3>Privacy &amp; Age Groups</h3>
+        <ul class="list">
+          <li>Added a clearer age choice between <strong>Under 16</strong> and <strong>16 or older</strong></li>
+          <li>Under-16 players can separately choose whether to share limited, aggregated usage statistics</li>
+          <li>Age changes now reapply the correct privacy and advertising route; a restart is used when a native ad SDK has already been started</li>
+          <li>Improved Privacy &amp; Data button ordering and labels for each age group</li>
+          <li>Opening privacy choices from Settings no longer triggers the first-start consent flow a second time</li>
+          <li>Privacy prompts keep the game UI visible while temporarily blocking input until the choice is complete</li>
+        </ul>
+
+        <h3>Child-Directed Rewarded Ads</h3>
+        <ul class="list">
+          <li>Under-16 players can use the existing rewarded ad for voluntary revives and Daily Streak rewards</li>
+          <li>Child-directed rewarded requests use the configured contextual child route and do not enable banners, interstitials, or forced ads for under-16 players</li>
+          <li>Players aged 16 or older continue to use the existing adult advertising flow</li>
+          <li>On iOS, the child-directed route remains disabled pending device verification</li>
+          <li>Rewarded availability and revive controls now refresh when a fill arrives, including store builds</li>
+          <li>Improved ad initialization timing and routing diagnostics to prevent ads silently remaining unavailable after startup</li>
+        </ul>
+
+        <h3>Usage Statistics &amp; Developer Dashboard</h3>
+        <ul class="list">
+          <li>Added a separate limited usage route for consented, aggregated gameplay counters</li>
+          <li>Added age-group day totals for active install days, sessions, runs, modes, tutorials, performance, and fixed death categories</li>
+          <li>Added limited retention totals for D1, D3, D7, D14, and D30</li>
+          <li>Developer Dashboard now shows Under 16 and 16+ measurements separately from player-profile analytics</li>
+          <li>Dashboard labels distinguish received measurement batches from unique players and identify data that is not observable</li>
+        </ul>
+
+        <h3>Startup, Gameplay &amp; Stability</h3>
+        <ul class="list">
+          <li>Improved startup gating so optional privacy and online checks do not block offline gameplay unnecessarily</li>
+          <li>Improved recovery after changing age groups and returning to the game</li>
+          <li>Fixed cases where rewarded buttons could remain disabled after an ad became ready</li>
+          <li>Improved safeguards around native SDK initialization and duplicate ad managers</li>
+          <li>Additional Android, privacy, interface, and stability fixes</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details" id="v1-9-0-6">
         <summary class="patch-summary">
           <div class="patch-title">
             <h2>Version 1.9.0.6</h2>
