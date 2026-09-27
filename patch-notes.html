@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voidworks | Patch Notes</title>
-  <meta name="description" content="Holovia 1.9.0.7 patch notes: improved age-aware privacy, child-directed rewarded ads, limited usage statistics, ad reliability, and interface fixes. Browse earlier updates from Voidworks.">
+  <meta name="description" content="Holovia 1.9.0.8 patch notes: hands-on tutorial practice, shared Game Center leaderboard profiles, camera adjustments, revive improvements, and gameplay fixes. Browse earlier updates from Voidworks.">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
@@ -38,14 +38,68 @@
 
     <section class="stack">
 
-      <details class="article patch-details" id="v1-9-0-7" open>
+      <details class="article patch-details" id="v1-9-0-8" open>
+        <summary class="patch-summary">
+          <div class="patch-title">
+            <h2>Version 1.9.0.8</h2>
+          </div>
+
+          <div class="patch-actions">
+            <span class="badge">Latest</span>
+            <span class="patch-toggle-label"></span>
+          </div>
+        </summary>
+
+        <p>
+          Holovia 1.9.0.8 brings a more hands-on tutorial, shared Game Center leaderboard profiles, refined camera framing, improved revive protection, build-size optimizations, and further gameplay and interface fixes.
+        </p>
+
+        <h3>New Features</h3>
+        <ul class="list">
+          <li>Added a guided first-wall exercise that waits while players find the opening, with a position marker, red and green guidance, and a success effect when correctly aligned</li>
+          <li>Devices using the same verified Game Center account can now share one Holovia leaderboard name and each mode's highest score</li>
+          <li>Existing linked Game Center profiles can now be restored on another supported device without choosing a new leaderboard name</li>
+          <li>Added a spectator indicator showing when an opponent is actively watching your Online Multiplayer run</li>
+        </ul>
+
+        <h3>Improvements &amp; Changes</h3>
+        <ul class="list">
+          <li>Shortened the opening tutorial to two swipe walls followed by three dash walls</li>
+          <li>Refined the tutorial hand's placement and double-tap animation, with a brief reminder when a missed dash causes a retry</li>
+          <li>Tutorial guidance now stays behind the player and clears more consistently during passes, deaths, and rewinds</li>
+          <li>Adjusted camera framing to bring the action closer, with tailored positioning for 3×3, 4×4, and 5×5 grids</li>
+          <li>Improved camera fitting across screen sizes and made grid transitions smoother, including when camera shake is disabled</li>
+          <li>Slightly reduced late-stage 5×5 wall speed in Climb</li>
+          <li>Reviving now activates the standard shield with a five-second timer and visible feedback</li>
+          <li>Increased protection against immediate follow-up collisions after shield hits and during revive transitions</li>
+          <li>Removed fake walls from newly generated Online Multiplayer courses</li>
+          <li>Improved the transition from the loading screen to initial language selection</li>
+          <li>Removed unused runtime resources and improved iOS release compression to reduce unnecessary build size</li>
+          <li>Additional performance and stability improvements</li>
+        </ul>
+
+        <h3>Bug Fixes</h3>
+        <ul class="list">
+          <li>Fixed shooter pieces and cluster shooters launching before their wall became the front wall</li>
+          <li>Fixed required shockwave pickups disappearing when space around a fake wall became too tight</li>
+          <li>Fixed cases where interrupted dash or explosion states could prevent dashing after a revive</li>
+          <li>Fixed wall pieces becoming misaligned when a death interrupted their movement</li>
+          <li>Fixed tutorial markers remaining visible after a failed attempt and delays before the next tutorial wall</li>
+          <li>Fixed power-up indicator layout issues in the minimal UI</li>
+          <li>Fixed menu controls appearing during restart transitions</li>
+          <li>Fixed background mountains moving ahead of the floor while a new run was being prepared</li>
+          <li>Fixed bright outlines changing the appearance of dark Cobra and Crimson replay and multiplayer ghosts</li>
+          <li>Improved data export and deletion for players without a completed public online profile</li>
+        </ul>
+      </details>
+
+      <details class="article patch-details" id="v1-9-0-7">
         <summary class="patch-summary">
           <div class="patch-title">
             <h2>Version 1.9.0.7</h2>
           </div>
 
           <div class="patch-actions">
-            <span class="badge">Latest</span>
             <span class="patch-toggle-label"></span>
           </div>
         </summary>
@@ -102,7 +156,6 @@
           </div>
 
           <div class="patch-actions">
-            <span class="badge">Latest</span>
             <span class="patch-toggle-label"></span>
           </div>
         </summary>
